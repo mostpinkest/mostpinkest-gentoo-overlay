@@ -6,7 +6,7 @@ SRC_URI="https://github.com/JezerM/web-greeter/archive/refs/tags/${PV}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 
 RDEPEND="dev-libs/gobject-introspection
   dev-qt/qtwebengine
