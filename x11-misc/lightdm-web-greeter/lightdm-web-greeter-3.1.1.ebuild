@@ -27,6 +27,16 @@ DEPEND="${RDEPEND}
   app-arch/zip
   sys-devel/make"
 
+src_prepare() {
+  if [[ $(declare -p PATCHES 2>/dev/null) == "declare -a"* ]]; then
+    [[ -n ${PATCHES[@]} ]] && eapply "${PATCHES[@]}"
+  else
+    [[ -n ${PATCHES} ]] && eapply ${PATCHES}
+  fi
+  eapply_user
+  ${WORKDIR}/build/utils.sh build-init
+}
+
 src_install() {
   set +f
   if [[ -f Makefile ]] || [[ -f GNUmakefile ]] || [[ -f makefile ]] ; then
