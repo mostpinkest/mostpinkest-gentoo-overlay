@@ -19,3 +19,5 @@ DEPEND="${RDEPEND}
 	net-misc/rsync
   app-arch/zip
   sys-devel/make"
+
+S="${WORKDIR}/web-greeter-${PV}"
