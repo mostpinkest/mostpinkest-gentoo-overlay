@@ -14,7 +14,8 @@ RDEPEND="dev-libs/gobject-introspection
   dev-python/PyQtWebEngine
 	dev-python/python-xlib
   dev-python/ruamel-yaml
-  dev-python/pygobject"
+  dev-python/pygobject
+  x11-misc/lightdm"
 DEPEND="${RDEPEND}
 	net-misc/rsync
   app-arch/zip
