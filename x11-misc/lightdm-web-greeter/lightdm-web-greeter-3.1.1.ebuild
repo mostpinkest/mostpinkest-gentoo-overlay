@@ -7,6 +7,7 @@ if [[ ${PV} == 9999 ]]; then
   EGIT_REPO_URI="https://github.com/jezerM/web-greeter.git"
 else
   SRC_URI="https://github.com/JezerM/web-greeter/archive/refs/tags/${PV}.tar.gz"
+  S="${WORKDIR}/web-greeter-${PV}"
 fi
 
 LICENSE="GPL-3"
@@ -25,8 +26,6 @@ DEPEND="${RDEPEND}
   net-misc/rsync
   app-arch/zip
   sys-devel/make"
-
-S="${WORKDIR}/web-greeter-${PV}"
 
 src_install() {
   set +f
