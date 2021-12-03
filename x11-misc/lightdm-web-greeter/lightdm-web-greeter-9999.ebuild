@@ -8,11 +8,11 @@ if [[ ${PV} == 9999 ]]; then
 else
   SRC_URI="https://github.com/JezerM/web-greeter/archive/refs/tags/${PV}.tar.gz"
   S="${WORKDIR}/web-greeter-${PV}"
+  KEYWORDS="-amd64 -x86"
 fi
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="-amd64 -x86"
 
 RDEPEND="dev-libs/gobject-introspection
   dev-qt/qtwebengine
@@ -35,13 +35,16 @@ src_prepare() {
     [[ -n ${PATCHES} ]] && eapply ${PATCHES}
   fi
   eapply_user
-  ${WORKDIR}/build/utils.sh build-init
+}
+
+src_compile() {
+  return
 }
 
 src_install() {
   set +f
   if [[ -f Makefile ]] || [[ -f GNUmakefile ]] || [[ -f makefile ]] ; then
-    emake DESTDIR="${D}" install
+    emake DESTDIR="${D}" -j1 install
   fi
 
   if ! declare -p DOCS >/dev/null 2>&1 ; then
