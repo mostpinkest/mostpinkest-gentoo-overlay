@@ -16,7 +16,6 @@ LICENSE="GPL-3"
 SLOT="0"
 
 CC="${CC:-cc}"
-DESTDIR="${D}" 
 S="${S}/build"
 
 RDEPEND="dev-libs/dbus-glib
@@ -27,12 +26,17 @@ DEPEND="${RDEPEND}
   dev-util/meson"
 
 src_compile() {
-  meson --prefix=/usr --libdir=lib ..
+  echo "### 0 ###"
+  DESTDIR="${D}" meson --libdir=lib ..
+  echo "### 1 ###"
   ninja
+  echo "### 2 ###"
 }
 
 src_install() {
-  ninja install
+  echo "### 3 ###"
+  DESTDIR="${D}" ninja install
+  echo "### 4 ###"
 
   if ! declare -p DOCS >/dev/null 2>&1 ; then
     local d
