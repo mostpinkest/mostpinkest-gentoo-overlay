@@ -8,7 +8,7 @@ if [[ ${PV} == 9999 ]]; then
   EGIT_BRANCH="stable"
 else
   SRC_URI="https://github.com/Antergos/web-greeter/archive/refs/tags/${PV}.tar.gz"
-  # S="${WORKDIR}/web-greeter-${PV}"
+  S="${WORKDIR}/web-greeter-${PV}"
   KEYWORDS="~amd64 ~x86"
 fi
 
