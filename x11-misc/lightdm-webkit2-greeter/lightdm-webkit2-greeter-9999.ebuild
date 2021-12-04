@@ -15,6 +15,7 @@ fi
 LICENSE="GPL-3"
 SLOT="0"
 
+CC="${CC:-cc}"
 S="${S}/build"
 
 RDEPEND="dev-libs/dbus-glib
