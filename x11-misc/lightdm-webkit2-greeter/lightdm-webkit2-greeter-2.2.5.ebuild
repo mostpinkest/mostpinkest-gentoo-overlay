@@ -15,6 +15,8 @@ fi
 LICENSE="GPL-3"
 SLOT="0"
 
+S="${S}/build"
+
 RDEPEND="dev-libs/dbus-glib
   x11-libs/gtk+
   net-libs/webkit-gtk
