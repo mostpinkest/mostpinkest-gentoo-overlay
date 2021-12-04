@@ -13,7 +13,7 @@ fi
 LICENSE="GPL-3"
 SLOT="0"
 
-RDEPEND=">x11-misc/lightdm-web-greeter-3.1.1"
+RDEPEND="|| ( >x11-misc/lightdm-web-greeter-3.1.1 x11-misc/lightdm-webkit2-greeter )"
 
 src_install() {
   insinto /usr/share/web-greeter/themes/Aether
