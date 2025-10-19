@@ -1,4 +1,4 @@
-# Logicer's Gentoo Overlay
+# mostpinkest's Gentoo Overlay
 Just some custom ebuilds for gentoo
 
 ## Install
